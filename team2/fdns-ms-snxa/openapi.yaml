@@ -1,0 +1,165 @@
+openapi: "3.0.0"
+info:
+ title: "fdns-ms-snxa"
+ description: "This document describes the API for the Street Network Analysis microservice"
+ version: "0.1.0"
+ contact:
+   email: "___@cdc.gov"
+
+ license:
+   name: "Apache 2.0"
+   url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+servers:
+  - url: http://localhost:5000
+    description: Street Network Analysis microservice
+
+
+tags:
+ - name: snxa
+   description: Street Network Analysis
+
+paths:
+  /:
+    get:
+      tags:
+       - snxa
+      summary: "test GET response"
+
+      description: responses
+      responses:
+        '200':
+          $ref: '#/components/responses/StatusOK-200'
+
+  /graph_from_point:
+    post:
+      tags:
+       - snxa
+      summary: "receives JSON and returns graph"
+
+      requestBody:
+        description: graph_from_address JSON
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/from_point_JSON'
+
+      description: header responses
+      responses:
+        '200':
+          $ref: '#/components/responses/StatusOK-200'
+        '400':
+          $ref: '#/components/responses/StatusBadRequest-400'
+        '405':
+          $ref: '#/components/responses/StatusMethodNotAllowed-405'
+        '500':
+          $ref: '#/components/responses/StatusInternalServerError-500'
+          
+  /graph_from_place:
+    post:
+      tags:
+       - snxa
+      summary: "receives JSON and returns graph"
+
+      requestBody:
+        description: graph_from_place JSON
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/graph_from_place'
+
+      description: header responses
+      responses:
+        '200':
+          $ref: '#/components/responses/StatusOK-200'
+        '400':
+          $ref: '#/components/responses/StatusBadRequest-400'
+        '405':
+          $ref: '#/components/responses/StatusMethodNotAllowed-405'
+        '500':
+          $ref: '#/components/responses/StatusInternalServerError-500'
+
+components:
+
+  schemas:
+
+    graph_from_place:
+      description: this is the object received
+      type: object
+      properties:
+        location:
+          type: string
+          description: address of location
+        network_type:
+          type: string
+          description: network mode e.g. drive, walk
+
+      required: [location, network_type]
+    
+    from_point_JSON:
+      description: this is the object received
+      type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
+          description: address of location e.g. Manhattan, New York, USA
+        network_type:
+          type: string
+          description: network type e.g. drive, walk
+
+      required: [location, network_mode]
+
+    message-200:
+      description: message returned at StatusOK success
+      type: string
+      format: binary
+
+    err-message-400:
+      description: message returned at StatusBadRequest | route not supported
+      type: string
+      format: binary
+
+    err-message-405:
+      description: message returned at StatusMethodNotAllowed | metod not supported
+      type: string
+      format: binary
+
+    err-message-500:
+      description: message returned at StatusInternalServerError
+      type: string
+      format: binary
+
+  responses:
+
+    StatusOK-200:
+      description: Executed, Status OK
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/message-200'
+
+    StatusBadRequest-400:
+      description: Route is not supported
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/err-message-400'
+
+    StatusMethodNotAllowed-405:
+      description: Method not supported
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/err-message-405'
+
+    StatusInternalServerError-500:
+      description: Operation not executed, internal error
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/err-message-500'
+
+
