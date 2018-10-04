@@ -1,0 +1,109 @@
+<!DOCTYPE html class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeployMe Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+</head>
+
+<body class="h-100">
+    <div class="header sticky-top w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+            <img class="logo" src="assets/images/deployme_icon.png">
+            <a class="navbar-brand flex-grow-1" href="#">DeployMe Admin</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="d-flex justify-content-right"></div>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="query.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="response.html">Add Response</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="status.html">Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">User Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row w-100">
+            <div class="col-12 text-center">
+                <h1>Deployment Status</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100 h-100">
+        <div class="row query-input">
+            <form class="w-100 mt-4">
+                <p><i>See the status of candidates below. For candidates with pending status, once approved for travel,
+                        mark the candidate as "confirmed"</i></p>
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>Employee Type</th>
+                            <th>Health Comm Skills</th>
+                            <th>Subject Area of Expertise</th>
+                            <th>Language Proficiency</th>
+                            <th>Status</th>
+                            <th>Confirmed</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jane Doe</td>
+                                <td>FTE</td>
+                                <td>Risk Communication</td>
+                                <td>Environmental Health</td>
+                                <td>Spanish</td>
+                                <td>Pending</td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input position-static" type="checkbox" name="qr-1-confirm"
+                                            id="qr-1-confirm" value="Confirmed" aria-label="...">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>Contractor</td>
+                                <td>Public Relations</td>
+                                <td>Virology</td>
+                                <td>French, German</td>
+                                <td>Pending</td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input position-static" type="checkbox" name="qr-2-confirm"
+                                            id="qr-2-confirm" value="Confirmed" aria-label="...">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/app.js" async defer></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+
+</body>
+
+</html>
