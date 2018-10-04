@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" lang="en"> 
+<head>
+    <title>Taxonomy</title>
+  
+</head>
+<body>
+	<h1>Add Taxa</h1>
+    <form action="/create"  method="post"  enctype="multipart/form-data">
+    	 <p>Node File:  <input type="file" name="nodeFile"></p>
+    	  <p>Name File:  <input type="file" name="nameFile"></p>
+    	  <p>Parent Id:  <input type="text" name="term"></p>
+    	   <p>Rank:  <input type="text" name="rank"></p>
+    	    <p>Label:  <input type="text" name="label"></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>
