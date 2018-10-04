@@ -1,0 +1,249 @@
+{
+  "extractor": {
+    "version": "1.0.0",
+    "hash": "35ed35dcea7ca7d94a7b180c137914b6",
+    "UCID": {
+      "id": "EMPTY",
+      "hash": "ba2b45bdc11e2a4a6e86aab2ac693cbb"
+    },
+    "timestamp": 1538595528328
+  },
+  "message": {
+    "CDA": {
+      "source": {
+        "ClinicalDocument": {
+          "code": {
+            "@codeSystem": "2.16.840.1.113883.6.1",
+            "@codeSystemName": "LOINC",
+            "@displayName": "Public health Case report",
+            "@code": "55751-2"
+          },
+          "recordTarget": {
+            "@typeCode": "RCT",
+            "@contextControlCode": "OP",
+            "patientRole": {
+              "@classCode": "PAT",
+              "patient": {
+                "@determinerCode": "INSTANCE",
+                "@classCode": "PSN",
+                "name": {
+                  "given": "Harry",
+                  "family": "Porter"
+                },
+                "birthTime": {
+                  "@value": "19860123000000.000+0000"
+                },
+                "administrativeGenderCode": {
+                  "@codeSystem": "2.16.840.1.113883.5.1",
+                  "@codeSystemName": "AdministrativeGender",
+                  "@code": "M"
+                }
+              },
+              "providerOrganization": {
+                "@determinerCode": "INSTANCE",
+                "@classCode": "ORG",
+                "name": "CDC",
+                "id": {
+                  "@extension": "HIV-CBR",
+                  "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+                }
+              },
+              "id": {
+                "@extension": "10005-7",
+                "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+              }
+            }
+          },
+          "realmCode": {
+            "@code": "UV"
+          },
+          "custodian": {
+            "assignedCustodian": {
+              "@classCode": "ASSIGNED",
+              "representedCustodianOrganization": {
+                "@determinerCode": "INSTANCE",
+                "@classCode": "ORG",
+                "name": "CDC",
+                "id": {
+                  "@extension": "HIV-CBR",
+                  "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+                }
+              }
+            },
+            "@typeCode": "CST"
+          },
+          "@classCode": "DOCCLIN",
+          "effectiveTime": {
+            "@value": "20180718031259.000+0000"
+          },
+          "author": {
+            "@typeCode": "AUT",
+            "assignedAuthor": {
+              "assignedPerson": {
+                "@determinerCode": "INSTANCE",
+                "@classCode": "PSN",
+                "name": {
+                  "given": "Super",
+                  "family": "User"
+                }
+              },
+              "@classCode": "ASSIGNED",
+              "id": {
+                "@extension": "UNKNOWN",
+                "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+              },
+              "representedOrganization": {
+                "@determinerCode": "INSTANCE",
+                "@classCode": "ORG",
+                "name": "CDC",
+                "id": {
+                  "@extension": "HIV-CBR",
+                  "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+                }
+              }
+            },
+            "time": {
+              "@value": "20180723144821.570+0000"
+            }
+          },
+          "templateId": {
+            "@root": "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+          },
+          "title": {
+            "#text": "Public Health Case Report - HIV",
+            "@language": "en-US"
+          },
+          "confidentialityCode": {
+            "@codeSystem": "2.16.840.1.113883.5.25",
+            "@codeSystemName": "x_BasicConfidentialityKind",
+            "@code": "N"
+          },
+          "languageCode": {
+            "@code": "en-US"
+          },
+          "component": {
+            "@typeCode": "COMP",
+            "structuredBody": {
+              "component": {
+                "section": {
+                  "entry": [
+                    {
+                      "@typeCode": "DRIV",
+                      "observation": {
+                        "code": {
+                          "@codeSystem": "2.16.840.1.113883.6.96",
+                          "@codeSystemName": "SNOMED CT",
+                          "@displayName": "Trigger",
+                          "@code": "410658008"
+                        },
+                        "@classCode": "OBS",
+                        "effectiveTime": {
+                          "@value": "20180718031259.000+0000"
+                        },
+                        "id": {
+                          "@extension": "1532357301581",
+                          "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+                        },
+                        "templateId": {
+                          "@root": "1.3.6.1.4.1.19376.1.5.3.1.4.13"
+                        },
+                        "value": {
+                          "@type": "CD",
+                          "@codeSystem": "2.16.840.1.113883.6.96",
+                          "@codeSystemName": "SNOMED CT",
+                          "@displayName": "HIV Positive",
+                          "@code": "165816005"
+                        },
+                        "@moodCode": "EVN",
+                        "statusCode": {
+                          "@code": "completed"
+                        }
+                      }
+                    },
+                    {
+                      "@typeCode": "DRIV",
+                      "observation": {
+                        "code": {
+                          "@codeSystem": "2.16.840.1.113883.6.1",
+                          "@codeSystemName": "LOINC",
+                          "@displayName": "HIV RAPID TEST 1, QUALITATIVE",
+                          "@code": "5220-9"
+                        },
+                        "@classCode": "OBS",
+                        "effectiveTime": {
+                          "@value": "20180713000000.000+0000"
+                        },
+                        "id": {
+                          "@extension": "1532357301591",
+                          "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+                        },
+                        "templateId": {
+                          "@root": "1.3.6.1.4.1.19376.1.5.3.1.4.13"
+                        },
+                        "value": {
+                          "@type": "CD",
+                          "@codeSystem": "2.16.840.1.113883.3.7201",
+                          "@codeSystemName": "CIEL",
+                          "@displayName": "POSITIVE",
+                          "@code": "703"
+                        },
+                        "@moodCode": "EVN",
+                        "statusCode": {
+                          "@code": "completed"
+                        }
+                      }
+                    }
+                  ],
+                  "code": {
+                    "@codeSystem": "2.16.840.1.113883.6.1",
+                    "@codeSystemName": "LOINC",
+                    "@displayName": "Relevant diagnostic tests and/or laboratory data",
+                    "@code": "30954-2"
+                  },
+                  "@classCode": "DOCSECT",
+                  "text": {
+                    "list": {
+                      "item": [
+                        {
+                          "#text": "Trigger(s): ",
+                          "list": {
+                            "item": "New HIV Case"
+                          }
+                        },
+                        {
+                          "#text": "Other Diagnostic Data: ",
+                          "list": {
+                            "item": "Most Recent HIV Test: POSITIVE (13-Jul-2018 12 AM UTC)"
+                          }
+                        }
+                      ]
+                    },
+                    "@mediaType": "text/x-hl7-text+xml"
+                  },
+                  "templateId": {
+                    "@root": "1.3.6.1.4.1.19376.1.5.3.1.3.27"
+                  },
+                  "@moodCode": "EVN"
+                }
+              },
+              "@classCode": "DOCBODY",
+              "@moodCode": "EVN"
+            },
+            "@contextConductionInd": "true"
+          },
+          "typeId": {
+            "@extension": "POCD_HD000040",
+            "@root": "2.16.840.1.113883.1.3"
+          },
+          "id": {
+            "@extension": "10f2c1d2-82c4-4eae-b338-2dcac5616d27",
+            "@root": "1.3.6.1.4.1.21367.2010.1.2.305"
+          },
+          "@moodCode": "EVN"
+        }
+      },
+      "version": "1"
+    },
+    "type": "CDA"
+  }
+}

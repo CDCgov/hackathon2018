@@ -1,0 +1,107 @@
+﻿<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  classCode="DOCCLIN"
+                  moodCode="EVN">
+   <realmCode code="UV"/>
+   <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <id extension="1d6ec534-c3f4-44fc-904e-a2e7f4dc6198"
+       root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+   <code code="55751-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+         displayName="Public health Case report"/>
+   <title language="en-US">Public Health Case Report - HIV</title>
+   <effectiveTime value="20180815142854.000+0000"/>
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"
+                        codeSystemName="x_BasicConfidentialityKind"/>
+   <languageCode code="en-US"/>
+   <recordTarget contextControlCode="OP" typeCode="RCT">
+      <patientRole classCode="PAT">
+         <id extension="10009-9" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+         <patient classCode="PSN" determinerCode="INSTANCE">
+            <name>
+               <family>Chinedu</family>
+               <given>Juliet</given>
+            </name>
+            <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"
+                                      codeSystemName="AdministrativeGender"/>
+            <birthTime value="19960421000000.000+0000"/>
+         </patient>
+         <providerOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="HIV-CBR" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+            <name>CDC</name>
+         </providerOrganization>
+      </patientRole>
+   </recordTarget>
+   <author typeCode="AUT">
+      <time value="20180815142945.994+0000"/>
+      <assignedAuthor classCode="ASSIGNED">
+         <id extension="UNKNOWN" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+         <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+            <name>
+               <family>User</family>
+               <given>Super</given>
+            </name>
+         </assignedPerson>
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="HIV-CBR" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+            <name>CDC</name>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian typeCode="CST">
+      <assignedCustodian classCode="ASSIGNED">
+         <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id extension="HIV-CBR" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+            <name>CDC</name>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <component contextConductionInd="true" typeCode="COMP">
+      <structuredBody classCode="DOCBODY" moodCode="EVN">
+         <component>
+            <section classCode="DOCSECT" moodCode="EVN">
+               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.27"/>
+               <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                     displayName="Relevant diagnostic tests and/or laboratory data"/>
+               <text mediaType="text/x-hl7-text+xml">
+                  <list>
+                     <item>Trigger(s): <list>
+                           <item>New HIV Case</item>
+                        </list>
+                     </item>
+                     <item>Other Diagnostic Data: <list>
+                           <item>Most Recent HIV Test: POSITIVE (15-Aug-2018 12 AM UTC)</item>
+                        </list>
+                     </item>
+                  </list>
+               </text>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                     <id extension="1534343386005" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+                     <code code="410658008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                           displayName="Trigger"/>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20180815142854.000+0000"/>
+                     <value code="165816005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                            displayName="HIV Positive"
+                            xsi:type="CD"/>
+                  </observation>
+               </entry>
+               <entry typeCode="DRIV">
+                  <observation classCode="OBS" moodCode="EVN">
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                     <id extension="1534343386021" root="1.3.6.1.4.1.21367.2010.1.2.305"/>
+                     <code code="5220-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                           displayName="HIV RAPID TEST 1, QUALITATIVE"/>
+                     <statusCode code="completed"/>
+                     <effectiveTime value="20180815000000.000+0000"/>
+                     <value code="703" codeSystem="2.16.840.1.113883.3.7201" codeSystemName="CIEL"
+                            displayName="POSITIVE"
+                            xsi:type="CD"/>
+                  </observation>
+               </entry>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>
