@@ -1,0 +1,38 @@
+{
+  "name": "gsv",
+  "version": "0.0.0",
+  "private": true,
+  "description": "This is a simple Bootstrap template with responsive Navbar. This for educational use.",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rm public/styles.js public/scripts.js",
+    "build": "browserify src/index.js -o public/scripts.js && browserify -t browserify-css src/index.css -o public/styles.js",
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "body-parser": "^1.18.3",
+    "browserify": "^16.2.3",
+    "browserify-css": "^0.14.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.2",
+    "http-server": "^0.11.1",
+    "jade": "~1.11.0",
+    "jquery": "^3.3.1",
+    "morgan": "~1.9.0",
+    "npx": "^10.2.0",
+    "uswds": "^1.6.8"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "browserify-css": "^0.14.0",
+    "express": "^4.16.3"
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
+  }
+}
