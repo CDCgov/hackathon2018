@@ -1,0 +1,100 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>Provider Registration</h1>
+            <form name="form" (ngSubmit)="f.form.valid && signup()" #f="ngForm" novalidate role="form">
+                <div class="form-content">
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+                        <label for ="firstName">First Name</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel"
+                            tabindex="1" required placeholder="Enter your First Name">
+                        <div *ngIf="f.submitted && !firstName.valid" class="label label-danger">First Name is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
+                        <label>Last Name</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel"
+                        tabindex="2" required placeholder="Enter your Last Name">
+                        <div *ngIf="f.submitted && !lastName.valid" class="label label-danger">Last Name is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
+                        <label>City</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="city" [(ngModel)]="provider.city" #city="ngModel"
+                        tabindex="2" required placeholder="Enter your City">
+                        <div *ngIf="f.submitted && !city.valid" class="label label-danger">City is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !county.valid }">
+                        <label>County</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="county" [(ngModel)]="provider.county" #county="ngModel"
+                        tabindex="2" required placeholder="Enter your County">
+                        <div *ngIf="f.submitted && !county.valid" class="label label-danger">County is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !state.valid }">
+                        <label>State</label><span class="mandatory">*</span>
+                        <select [(ngModel)]="provider.state" #state="ngModel" name="state" class="form-control ">
+			                <option *ngFor="let c of states" [ngValue]="c.id">{{c.name}}</option>
+			            </select>
+                        <div *ngIf="f.submitted && !state.valid" class="label label-danger">State is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zip.valid }">
+                        <label>Zip</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="zip" [(ngModel)]="provider.zip" #zip="ngModel"
+                        tabindex="2" required placeholder="Enter your Zip">
+                        <div *ngIf="f.submitted && !zip.valid" class="label label-danger">Zip is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !telephone.valid }">
+                        <label>Telephone</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="telephone" [(ngModel)]="provider.telephone" #telephone="ngModel"
+                        tabindex="2" required placeholder="Enter your Telephone">
+                        <div *ngIf="f.submitted && !telephone.valid" class="label label-danger">Telephone is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !pandemicRegistrationForm.valid }">
+                        <label>Pandemic Registration Form</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="pandemicRegistrationForm" [(ngModel)]="provider.pandemicRegistrationForm" #pandemicRegistrationForm="ngModel"
+                        tabindex="2" required placeholder="Enter your Pandemic Registration Form">
+                        <div *ngIf="f.submitted && !pandemicRegistrationForm.valid" class="label label-danger">Pandemic Registration Form is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !medicalFacilityName.valid }">
+                        <label>Medical Facility Name</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="medicalFacilityName" [(ngModel)]="provider.medicalFacilityName" #medicalFacilityName="ngModel"
+                        tabindex="2" required placeholder="Enter your Medical Facility Name">
+                        <div *ngIf="f.submitted && !medicalFacilityName.valid" class="label label-danger">Medical Facility Name is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !medicalFacilityType.valid }">
+                        <label>Medical Facility Type</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="medicalFacilityType" [(ngModel)]="provider.medicalFacilityType" #medicalFacilityType="ngModel"
+                        tabindex="2" required placeholder="Enter your Medical Facility Type">
+                        <div *ngIf="f.submitted && !medicalFacilityType.valid" class="label label-danger">Medical Facility Type is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !stateAssignedPIN.valid }">
+                        <label>State Assigned PIN</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="stateAssignedPIN" [(ngModel)]="provider.stateAssignedPIN" #stateAssignedPIN="ngModel"
+                        tabindex="2" required placeholder="Enter your State Assigned PIN">
+                        <div *ngIf="f.submitted && !stateAssignedPIN.valid" class="label label-danger">State Assigned PIN is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !facilityAddress.valid }">
+                        <label>Facility Address</label><span class="mandatory">*</span>
+                        <input type="text" class="form-control " name="facilityAddress" [(ngModel)]="provider.facilityAddress" #facilityAddress="ngModel"
+                        tabindex="2" required placeholder="Enter your Facility Address">
+                        <div *ngIf="f.submitted && !facilityAddress.valid" class="label label-danger">Facility Address is required</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userName.valid }">
+						<label>Login User Name</label><span class="mandatory">*</span>
+						<input type="text" class="form-control " name="userName" [(ngModel)]="user.userName" #userName="ngModel"
+						tabindex="2" required placeholder="Enter your Login User Name">
+						<div *ngIf="f.submitted && !userName.valid" class="label label-danger">User Name is required</div>
+                    </div>
+					<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+						<label>User Password</label><span class="mandatory">*</span>
+						<input type="text" class="form-control " name="password" [(ngModel)]="user.password" #password="ngModel"
+						tabindex="2" required placeholder="Enter your User Password">
+						<div *ngIf="f.submitted && !password.valid" class="label label-danger">User Password is required</div>
+                    </div>
+
+                </div>
+                <a class="btn rounded-btn" [routerLink]="['/dashboard']"> Register </a>&nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
+            </form>
+        </div>
+    </div>
+</div>
