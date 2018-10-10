@@ -1,0 +1,73 @@
+body {
+    position: relative;
+    height: 100%
+}
+
+.header {
+    background-color: #795C5f;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-collapse {
+    flex-basis: 100% !important;
+}
+
+.add-field-btn {
+    position: relative;
+    left: 15px;
+}
+
+.btn {
+    margin-bottom: 20px;
+}
+
+#qry-search-btn {
+    position: relative;
+    top: 50px;
+    text-decoration: none;
+}
+
+#qry-select-btn {
+    text-decoration: none;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+table {
+    text-align: center;
+}
+
+thead {
+    background-color: #1c6c8c;
+    color: white;
+}
+
+.td-toggle {
+    padding: 0px !important;
+}
+
+.toggle-content {
+    padding: .75rem;
+    background-color: #D0ccd0;
+    text-align: left;
+}
+
+.footer {
+    width: 100%;
+    background-color: #795C5f;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeployMe Response Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+</head>
+
+<body class="h-100">
+    <div class="header sticky-top w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+            <img class="logo" src="assets/images/deployme_icon.png">
+            <a class="navbar-brand flex-grow-1" href="#">DeployMe Admin</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="d-flex justify-content-right"></div>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="query.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="response.html">Add Response</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="status.html">Status</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="profile.html">User Profile</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="index.html">User Form</a>
+                    </li>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="User Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+        <div class="row w-100">
+            <div class="col-12 text-center">
+                <h1>User Profile</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100 h-100">
+        <div class="row query-input">
+            <form class="w-100 mt-4">
+                <div class="row w-100 form-group">
+                    <label for="first" class="control-label col-md-4">First Name</label>
+                    <input class="col-md-8" type="text" class="form-control" id="first" placeholder="Jane">
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="last" class="control-label col-md-4">Last Name</label>
+                    <input type="text" class="form-control col-md-8" id="last" placeholder="Doe">
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="email" class="control-label col-md-4">Email</label>
+                    <input type="email" class="form-control col-md-8" id="email" placeholder="jdoe@cdc.gov">
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="phone" class="control-label col-md-4">Phone</label>
+                    <input type="Phone" class="form-control col-md-8" id="phone" placeholder="555-555-5555">
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="agency" class="control-label col-md-4">Agency</label>
+                    <input class="form-control col-md-8" id="agency" placeholder="Centers for Disease Control"></input>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="job_series" class="control-label col-md-4">Job Series</label>
+                    <input class="form-control col-md-8" id="job_series" placeholder="0685 - Public Health Advisor"></input>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="employee_type" class="control-label col-md-4">Employee Type</label>
+                    <input class="form-control col-md-8" id="employee_type" placeholder="FTE"></input>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="office" class="control-label col-md-4">Office Name</label>
+                    <input type="text" class="form-control col-md-8" id="office" placeholder="OPHPR/DEO/ERCB">
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="language_container" class="control-label col-md-4">Languages</label>
+                    <div id="language_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                        <table class="table table-sm table-bordered  table-striped table-hover " id="language_table">
+                            <tr>
+                                <th>Language</th>
+                                <th>Proficiency</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><select class="form-control" name="select_language">
+                                        <option>French</option>
+                                    </select></td>
+                                <td><select class="form-control" name="select_proficiency">
+                                        <option>Advanced</option>
+                                    </select></td>
+                                <td align="center"><button type="button" class="btn btn-link del">Remove</button></td>
+                            </tr>
+                        </table>
+                        <button type="button" onclick="addRow()" class="btn btn-link">+ Add New</button>
+                    </div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="communication_container" class="control-label col-md-4">Health Communication Skills</label>
+                    <div id="communication_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;">Media
+                        monitoring and message testing</div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="partnership_container" class="control-label col-md-4">Partnership Skills</label>
+                    <div id="partnership_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;">Private
+                        sector organizations</div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="experience_container" class="control-label col-md-4">Emergency Response Experience</label>
+                    <div id="experience_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;">I
+                        have worked on an emergency response within my agency</div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="training_container" class="control-label col-md-4">Relevant Training</label>
+                    <div id="training_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                        <ol>
+                            <li>IS-100.C: Introduction to the Incident Command System, ICS 100</li>
+                            <li>IS-200.B: ICS for Single Resources and Initial Action Incidents</li>
+                            <li>IS-700.B: An Introduction to the National Incident Management System</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="expertise_container" class="control-label col-md-4">Subject Area of Expertise</label>
+                    <div id="expertise_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                        <ol>
+                            <li>Biological incident</li>
+                            <li>Pandemic influenza or other infectious disease outbreak</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="availability" class="control-label col-md-4">Deployment Availability</label>
+                    <input type="availability" class="form-control col-md-8" id="first" placeholder="Available"
+                        readonly>
+                </div>
+                <div class="row w-100 form-group">
+                    <label for="deployment_container" class="control-label col-md-4">Deployment History</label>
+                    <div id="deployment_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                        <table id="deployment_table" class="table table-bordered table-sm table-striped table-hover ">
+                            <thead>
+                                <th>Response</th>
+                                <th>Deployed To</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2014 Ebola</td>
+                                    <td>Conakry, Guinea</td>
+                                    <td>10/3/2017</td>
+                                    <td>10/7/2017</td>
+                                    <td>Completed</td>
+                                </tr>
+                                <tr>
+                                        <td>2018 Hurricane</td>
+                                        <td>Greenville, SC</td>
+                                        <td>9/21/2018</td>
+                                        <td>9/27/2018</td>
+                                        <td>Completed</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row w-100 form-group d-flex justify-content-center">
+                    <button class="btn" id="profile-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/app.js" async defer></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+
+</body>
+
+</html>
