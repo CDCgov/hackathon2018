@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Taxa
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: swp4
+Implementation-Vendor-Id: gov.cdc.taxonomy
+Build-Jdk: 1.8.0_152
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Taxa
+Created-By: Maven Integration for Eclipse
+

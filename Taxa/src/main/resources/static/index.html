@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" lang="en"> 
+<head>
+    <title>Taxonomy</title>
+  
+</head>
+<body>
+	<h1>Query Taxa</h1>
+    <form action="/query"  method="post"  enctype="multipart/form-data">
+    	 <p>Node File:  <input type="file" name="nodeFile"></p>
+    	  <p>Name File:  <input type="file" name="nameFile"></p>
+    	  <p>Search Term <input type="text" name="term"></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
