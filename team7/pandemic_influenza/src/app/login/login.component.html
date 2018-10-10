@@ -1,0 +1,39 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h4>Login into Pandemic Influenza</h4>
+
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate role="form">
+			  <div class="form-content">
+				  <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userName.valid }">
+					<span style = "font-weight:bold">User Name</span>
+					<input type="text" class="form-control" name="userName" [(ngModel)]="model.userName" #userName="ngModel"
+						   required>
+					<div *ngIf="f.submitted && !userName.valid" class="badge badge-danger">User Name is required</div>
+				  </div>
+				  <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+					<span style = "font-weight:bold">Password</span>
+					<input type="password" class="form-control"name="password" [(ngModel)]="model.password" #password="ngModel"
+						   required>
+					<div *ngIf="f.submitted && !password.valid" class="badge badge-danger">Password is required</div>
+				  </div>
+				  <div>
+
+				  </div>
+				  <div class="form-group btns-section">
+				  	<button *ngIf="!loading" class="btn rounded-btn tb-primary-btn">Log in</button>
+				  	&nbsp;
+				  	<a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+					<!--<button *ngIf="loading" [disabled]="loading" class="btn rounded-btn tb-primary-btn">
+					  <img src="assets/images/ajax-loader-1.gif"/>
+				   </button>-->
+
+
+				  </div>
+			  </div>
+		  </form>
+
+        </div>
+    </div>
+</div>
