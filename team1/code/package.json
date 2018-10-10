@@ -1,0 +1,17 @@
+{
+  "name": "cdc-hackathon-2018-team1",
+  "version": "1.0.0",
+  "description": "Members: Lisa Murie,  Dustyn Palmer, David Tsao, Seth Edmunds, Peter Hicks",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

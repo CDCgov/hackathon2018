@@ -1,0 +1,7 @@
+{
+   "$type": {
+        "$.message.CDA.source.ClinicalDocument.recordTarget.patientRole.patient.name": "Object",
+       "$.message.CDA.source.ClinicalDocument.recordTarget.patientRole.patient.name.family": "String",
+       "$.message.CDA.source.ClinicalDocument.recordTarget.patientRole.patient.name.given": "String"
+   }
+}
