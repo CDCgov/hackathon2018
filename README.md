@@ -1,5 +1,5 @@
 # Open CDC Hackathon 2018
-This repository includes the projects from the Open CDC Hackathon 2018.
+This repository includes the projects from the Open CDC Hackathon 2018. This project includes subfolders with each team's project.
 
 ## Projects
 - Team 1
