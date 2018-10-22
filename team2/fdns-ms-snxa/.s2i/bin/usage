@@ -1,0 +1,8 @@
+cat <<EOF
+This is the FDNS S2I image:
+To use it, install S2I: https://github.com/openshift/source-to-image
+Sample invocation:
+s2i build https://github.com/cosmycx/fdns-ms-street-network-analytics.git --context-dir=test/test-app/ lighttpd-centos7 sample-app
+You can then run the resulting image via:
+docker run -p 8080:8080 sample-app
+EOF
