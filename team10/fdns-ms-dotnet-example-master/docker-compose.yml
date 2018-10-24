@@ -1,0 +1,99 @@
+version: '3'
+services:
+  # Fluentd is required for all microservices to monitor logs in one source
+  fluentd:
+    image: fluent/fluentd
+    ports:
+      - "24224:24224"
+
+  # FDNS Storage Microservice
+  fdns-ms-storage:
+    image: cdcgov/fdns-ms-storage
+    ports:
+      - "8082:8082"
+    depends_on:
+      - fluentd
+      - minio
+    environment:
+      STORAGE_PORT: 8082
+      STORAGE_REPO_HOST: http://minio:9000
+      STORAGE_REPO_ACCESS_KEY: minio
+      STORAGE_REPO_SECRET_KEY: minio123
+      STORAGE_FLUENTD_HOST: fluentd
+      STORAGE_FLUENTD_PORT: 24224
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server ~/Downloads/minio
+
+  # FDNS Object Microservice
+  fdns-ms-object:
+    image: cdcgov/fdns-ms-object
+    ports:
+      - "8083:8083"
+    depends_on:
+      - fluentd
+      - mongo
+    environment:
+      OBJECT_PORT: 8083
+      OBJECT_MONGO_HOST: mongo
+      OBJECT_MONGO_PORT: 27017
+      OBJECT_FLUENTD_HOST: fluentd
+      OBJECT_FLUENTD_PORT: 24224
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  # FDNS Indexing Microservice
+  fdns-ms-indexing:
+    image: cdcgov/fdns-ms-indexing
+    ports:
+      - "8084:8084"
+    depends_on:
+      - fluentd
+      - elastic
+      - fdns-ms-object
+    environment:
+      INDEXING_PORT: 8084
+      INDEXING_ELASTIC_HOST: elastic
+      INDEXING_ELASTIC_PORT: 9200
+      INDEXING_ELASTIC_PROTOCOL: http
+      INDEXING_FLUENTD_HOST: fluentd
+      INDEXING_FLUENTD_PORT: 24224
+      OBJECT_URL: http://fdns-ms-object:8083
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
+    ports:
+      - "9200:9200"
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=127.0.0.1
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  # FDNS Business Rule Engine Microservice
+  # fdns-ms-rules:
+  #   image: cdcgov/fdns-ms-rules
+  #   ports:
+  #     - "8086:8086"
+  #   depends_on:
+  #     - fluentd
+  #     - fdns-ms-object
+  #   environment:
+  #     RULES_PORT: 8086
+  #     RULES_FLUENTD_HOST: fluentd
+  #     RULES_FLUENTD_PORT: 24224
+  #     OBJECT_URL: http://fdns-ms-object:8083
